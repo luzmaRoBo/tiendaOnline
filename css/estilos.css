@@ -1,0 +1,737 @@
+/*  
+azul oscuro{ color: #053543; } { color: rgba(5, 53, 67, 1); }
+azul claro{ color: #16ACC4; } { color: rgba(22, 172, 196, 1); }
+azul medio{ color: #086A7A; } { color: rgba(8, 106, 122, 1); }
+turquesa{ color: #0CABAB; } { color: rgba(12, 171, 171, 1); }
+gris{ color: #D6E1DD; } { color: rgba(214, 225, 221, 1); }
+*/
+
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap');
+
+* {
+    box-sizing: border-box;
+    font-family: "Open Sans", serif;
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    background-color: rgba(214, 225, 221, 1);
+}
+/*=====================================
+        CABECERA Y FOOTER
+======================================*/
+#cabecera{
+    display: flex;
+    background-color: #053543;
+}
+/*div de la foto*/
+#cabecera div:nth-of-type(1){
+    width: 25%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* padding: 10px; */
+    
+}
+.logo{
+    width: 100%;
+    height: 250px;
+}
+/*div del titulo*/
+#cabecera div:nth-of-type(2){
+    width: 75%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+h1{
+    text-align: center;
+    color: white;
+    font-size: 3em;
+}
+/*fila donde muestra el usuario */
+.sesion{
+    background-color: #086A7A;
+    border-bottom: 3px solid #053543;
+    display: flex;
+    justify-content: space-between;
+    padding: 20px;
+    /* margin-top: 10px; */
+}
+h4{
+    color: white;
+    font-size: 1.7em;
+    text-align: left;
+    margin: 10px;
+}
+/*boton para cerrar la sesion de usuario*/
+#salir{
+    background-color: #D6E1DD;
+    border: 3px solid #053543;
+    font-size: 1.4em;
+    font-weight: bolder;
+    color: #053543;
+    padding: 10px;
+}
+
+footer{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: #053543;
+}
+footer p{
+    color: white;
+    font-size: 1.7em;
+    font-weight: bolder;
+    text-align: left;
+    margin: 10px;
+    padding: 25px;
+}
+
+/*=====================================
+       MENU DE NAVEGACION
+======================================*/
+nav{
+    display: flex;
+    width: 90%;
+    margin-right: auto;
+    margin-left: auto;
+    justify-content: space-between;
+    margin-top: 5px;
+    margin-bottom: 25px;
+    box-shadow: 15px 15px 15px #053543;
+    
+}
+ul {
+    list-style-type: none;
+    display: flex;
+    flex-direction: row;
+    gap: 60px;
+    padding: 15px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+
+}
+ul li a {
+    text-decoration: none;
+    color: #053543;
+    font-size: 1.4em;
+    font-weight: bolder;
+    text-transform: uppercase;
+}
+.activo{
+    background-color: #086A7A;
+    color: white;
+    padding: 15px;
+}
+
+/*=====================================
+        PAGINA DE REGISTRO Y LOGIN
+======================================*/
+#registro{
+    display: flex;
+    flex-direction: column;
+    width: 75%;
+    margin-right: auto;
+    margin-left: auto;
+    margin-top: 20px;
+    padding: 20px;
+    box-shadow: 10px 10px 20px rgba(5, 53, 67, 1);
+    background-color: rgba(8, 106, 122, 0.2);
+}
+#registro h2{
+    text-align: center;
+    color: #053543;
+    font-size: 2em;
+    margin-bottom: 20px;
+    border-bottom: 2px solid #053543;
+}
+form{
+    text-align: center;
+}
+label{
+    color: #053543;
+    font-size: 1.5em;
+    font-weight: bolder;
+    padding: 10px;
+    margin: 10px;
+}
+input,select{
+    color: #053543;
+    font-size: 1.3em;
+    background-color: white;
+    padding: 10px;
+    margin: 10px;
+    border: 2px solid #053543;
+    border-radius: 10px;
+}
+#botonIns{
+    background-color: #053543;
+    border-radius: 10px;
+    font-size: 1.1em;
+    font-weight: bolder;
+    color: white;
+    padding: 10px;
+}
+/*cambiar entre login y registros*/
+#enlace{
+    color: #053543;
+    font-size: 1.2em;
+    text-decoration: none;
+    border-bottom: 2px solid #053543;
+    font-weight: bolder;
+}
+/*=====================================
+        ESTILOS DEL MAIN
+======================================*/
+#plantilla{
+    width: 100%;
+    margin-right: auto;
+    margin-left: auto;
+    margin-top: 5px;
+    background-color: rgba(8, 106, 122, 0.2);
+    padding: 20px;
+}
+
+#inicio{
+    margin: 30px;
+    text-align: justify;
+    font-size: 1.1em;
+    color: #053543;
+    font-weight: bolder;
+    padding-left: 30px;
+    padding-right: 30px;
+}
+
+/*=====================================
+        PAGINA PRODUCTOS
+======================================*/
+.h1Productos{
+    color: #053543;
+    margin: 20px;
+    border-bottom: 2px solid #053543;
+}
+.productos{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+#producto{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    margin: 10px;
+    padding: 15px;
+    width: 25%;
+    border-radius: 10px;
+    box-shadow: 15px 15px 15px rgba(5, 53, 67, 1);
+    background-color: #D6E1DD;
+}
+#foto{
+    margin-bottom: 20px;
+}
+.fotoPro{
+    width: 100%;
+    height: 250px;
+    border-radius: 20px;
+}
+#datos{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: center;
+}
+.titulo{
+    color: #053543;
+    font-size: 1.4em;
+    font-weight: bolder;
+    text-align: center;
+    font-variant: small-caps;
+}
+#descrip{
+    color: #053543;
+    font-weight: normal;
+    font-size: 1.1em;
+}
+#precio{
+    color: #053543;
+    font-weight: bolder;
+    font-size: 1.2em;
+}
+#añadir{
+    background-color: #086A7A;
+    border-radius: 10px;
+    font-size: 1.1em;
+    font-weight: bolder;
+    color: white;
+    padding: 10px;
+}
+
+#botonAñadir{
+    width: 100%;
+    display: flex;
+    margin-top: 20px;
+    
+}
+#añadirPro,#añadirUsu{
+    width: 80%;
+    margin-right: auto;
+    margin-left: auto;
+    background-color: #086A7A;
+    border-radius: 10px;
+    font-size: 1.3em;
+    font-weight: bolder;
+    color: white;
+    padding: 10px;
+}
+.botonesAccion{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    border-top: 2px solid #053543;
+    margin-top: 20px;
+}
+.botonModificar{
+    margin: 10px;
+    background-color: #086A7A;
+    border-radius: 10px;
+    color: white;
+    font-size: 1.1em;
+    font-weight: bolder;
+    padding: 10px;
+}
+.botonEliminar{
+    margin: 10px;
+    background-color: red;
+    border-radius: 10px;
+    color: white;
+    font-size: 1.1em;
+    font-weight: bolder;
+    padding: 10px;
+}
+/*=====================================
+        VENTANA MODAL
+======================================*/
+.modal {
+    position: fixed;
+    z-index: 100;
+    top: 2%;
+    left: 25%;
+    right: 25%;
+    width: 50%;
+    height: 90%;
+    background-color: #D6E1DD;
+    border: 2px solid #053543;
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    display: none;
+}
+.modal1 {
+    position: fixed;
+    z-index: 100;
+    top: 2%;
+    left: 25%;
+    right: 25%;
+    width: 50%;
+    height: 90%;
+    background-color: #D6E1DD;
+    border: 2px solid #053543;
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    display: none;
+}
+.cabeceraModal{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 20px;
+}
+.titulo{
+    width: 95%;
+}
+.cerrar{
+    width: 5%;
+}
+.botonCerrar{
+    background-color: #086A7A;
+    /* border: 2px solid #012E40; */
+    border-radius: 10px;
+    color: white;
+    font-weight: bolder;
+    font-size: 1.5em;
+    padding: 5px;
+}
+#formModal{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    gap: 10px;
+}
+#inputModal{
+    padding: 15px;
+    border-color: 2px solid #053543;
+    border-radius: 10px;
+    font-size: 1em;
+}
+textarea{
+    padding: 15px;
+    border-color: 2px solid #053543;
+    border-radius: 10px;
+    font-size: 1em;
+    margin-right: auto;
+    margin-left: auto;
+    width: 97%;
+    height: 150px;
+    resize: none;
+}
+
+/*=====================================
+       ESTILOS USUARIOS
+======================================*/
+table{
+    width: 100%;
+    table-layout: fixed;
+    border-collapse: collapse; /* Evita el doble borde */
+    margin: 20px 0;
+    text-align: left;
+    border: 2px solid #333; /* Borde oscuro alrededor de la tabla */
+}
+
+/* Estilo para las celdas de encabezado */
+th {
+    background-color: #086A7A;
+    color: white;
+    padding: 12px;
+    border: 1px solid #333;
+    text-align: center;
+    font-size: 1.4em;
+}
+
+/* Estilo para las celdas del cuerpo */
+td {
+    padding: 10px;
+    border: 1px solid #086A7A;
+    background-color: #D6E1DD;
+    text-align: center;
+    font-size: 1.2em;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+.botonesAccionUsu{
+    display: flex;
+    justify-content: space-around;
+}
+.botonEliminarU{
+    background: none;
+    border: none;
+    padding: 0;
+    cursor: pointer;
+}
+.bi-pencil-fill{
+    color: #012030;
+    font-size: 1.5em;
+}
+.modalUsu{
+    position: fixed;
+    z-index: 100;
+    top: 2%;
+    left: 25%;
+    right: 25%;
+    width: 40%;
+    height: 65%;
+    background-color: #D6E1DD;
+    border: 2px solid #053543;
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    display: none;
+}
+
+/*=====================================
+       ESTILOS CARRITO
+======================================*/
+
+.bi-trash-fill{
+    color: red;
+    font-size: 1.7em;
+}
+/*boton de acciones de carrito de la compra*/
+.elCa{
+    border: 0px;
+    background-color: #D6E1DD;
+}
+
+
+
+
+/*DISEÑO RESPONSIVE*/
+@media (min-width: 769px) and (max-width: 1024px){
+    .logo{
+        height: 200px;
+    }
+    .sesion{
+        flex-direction: row;
+        justify-content: flex-end;
+    }
+    h4{
+        font-size: 1.5em;
+    }
+    #salir{
+        font-size: 1.1em;
+        padding: 5px;
+        border-radius: 15px;
+        margin-left: 10px;
+    }
+    h1{
+        font-size: 2.6em;
+    }
+    ul li a {
+        font-size: 1.4em;
+    }
+
+    #producto{
+        width: 45%;
+    }
+    .h1Productos{
+        margin: 15px;
+        font-size: 2.4em;
+    }
+    .fotoPro{
+        height: 200px;
+    }
+    .titulo{
+        font-size: 1.2em;
+    }
+    #descrip{
+        font-size: 1.1em;
+    }
+    #precio{
+        color: #012030;
+        font-weight: bolder;
+        font-size: 1.4em;
+    }
+    #añadir{
+        font-size: 1em;
+    }
+    footer p{
+        font-size: 1.1em;
+    }
+    #inicio{
+        font-size: 0.9em;
+    }
+    th{
+        font-size: 1em;
+    }
+    td{
+        font-size: 0.9em;
+    }
+
+}
+
+@media (min-width: 481px) and (max-width: 768px){
+    .logo{
+        height: 150px;
+    }
+    .sesion{
+        flex-direction: row;
+        justify-content: flex-end;
+    }
+    h4{
+        font-size: 1.2em;
+    }
+    #salir{
+        font-size: 1em;
+        padding: 5px;
+        border-radius: 15px;
+        margin-left: 10px;
+    }
+    h1{
+        font-size: 2.4em;
+    }
+    ul{
+        gap: 30px;
+    }
+    ul li a {
+        font-size: 1.1em;
+    }
+
+    #registro{
+        width: 80%;
+    }
+    #registro h2{
+        font-size: 1.7em;
+    }
+    form{
+        text-align: center;
+    }
+    label{
+        font-size: 1.4em;
+    }
+    input{
+        font-size: 1.1em;
+    }
+    #botonIns{
+        font-size: 1em;
+    }
+    #enlace{
+        font-size: 1em;
+    }
+
+    #producto{
+        width: 90%;
+    }
+    .h1Productos{
+        margin: 15px;
+        font-size: 2.4em;
+    }
+    .fotoPro{
+        height: 200px;
+    }
+    .titulo{
+        font-size: 1.2em;
+    }
+    #descrip{
+        font-size: 1.1em;
+    }
+    #precio{
+        color: #012030;
+        font-weight: bolder;
+        font-size: 1.4em;
+    }
+    #añadir{
+        font-size: 1em;
+    }
+    footer p{
+        font-size: 0.7em;
+    }
+    #inicio{
+        font-size: 0.8em;
+        padding-left: 20px;
+        padding-right: 20px;
+        margin: 20px;
+    }
+    th{
+        font-size: 0.8em;
+    }
+    td{
+        font-size: 0.7em;
+    }
+    #modalUsu{
+        width: 60%;
+    }
+    .modal {
+        width: 60%;
+        height: 95%;
+    }
+
+}
+
+@media (max-width: 480px){
+    .logo{
+        height: 100px;
+    }
+    .sesion{
+        flex-direction: row;
+        justify-content: flex-end;
+    }
+    h4{
+        font-size: 1em;
+    }
+    #salir{
+        font-size: 0.9em;
+        padding: 5px;
+        border-radius: 15px;
+        margin-left: 10px;
+    }
+    h1{
+        font-size: 2em;
+    }
+    ul{
+        gap: 20px;
+    }
+    ul li a {
+        font-size: 1em;
+    }
+
+    #registro{
+        width: 80%;
+    }
+    #registro h2{
+        font-size: 1.5em;
+    }
+    form{
+        text-align: center;
+    }
+    label{
+        font-size: 1.2em;
+    }
+    input{
+        font-size: 0.9em;
+    }
+    #botonIns{
+        font-size: 0.9em;
+        padding: 5px;
+        border-radius: 15px;
+    }
+    #enlace{
+        font-size: 0.9em;
+    }
+
+    #producto{
+        width: 90%;
+    }
+    .h1Productos{
+        margin: 15px;
+        font-size: 2.4em;
+    }
+    .fotoPro{
+        height: 200px;
+    }
+    .titulo{
+        font-size: 1.2em;
+    }
+    #descrip{
+        font-size: 1.1em;
+    }
+    #precio{
+        color: #012030;
+        font-weight: bolder;
+        font-size: 1.4em;
+    }
+    #añadir{
+        font-size: 1em;
+    }
+    footer p{
+        font-size: 0.7em;
+    }
+    #inicio{
+        font-size: 0.8em;
+        padding-left: 20px;
+        padding-right: 20px;
+        margin: 20px;
+    }
+    th{
+        font-size: 0.8em;
+    }
+    td{
+        font-size: 0.7em;
+    }
+    #modalUsu{
+        width: 70%;
+    }
+    .modal {
+        width: 60%;
+        height: 95%;
+    }
+
+
+}
