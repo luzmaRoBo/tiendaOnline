@@ -51,6 +51,35 @@ function eliminarUsuario(){
     $conexion->close();
 }
 
+function modificarUsuario() {
+    $conexion = conectarBD();
+
+    if (isset($_POST["idUsuarioMod"])) {
+        $id = $_POST["idUsuarioMod"];
+        $nombre = htmlspecialchars(trim($_POST["modNombre"]));
+        $rol = $_POST["modRol"];
+        
+        // Revisa si el campo "modPass" está vacío o no
+        if (!empty($_POST["modPass"])) {
+            // Se ha introducido una nueva contraseña, la hasheamos y la actualizamos
+            $pass = password_hash($_POST["modPass"], PASSWORD_DEFAULT);
+
+            $stmt = $conexion->prepare("UPDATE usuarios SET nombre=?, pass=?, rol=? WHERE id=?");
+            $stmt->bind_param("sssi", $nombre, $pass, $rol, $id);
+        } else {
+            // No se ha introducido ninguna nueva contraseña, se ignora el campo pass
+            $stmt = $conexion->prepare("UPDATE usuarios SET nombre=?, rol=? WHERE id=?");
+            $stmt->bind_param("ssi", $nombre, $rol, $id);
+        }
+
+        $stmt->execute();
+        $stmt->close();
+    }
+    
+    $conexion->close();
+}
+
+
 
 
 ?>

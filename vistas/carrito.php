@@ -1,6 +1,13 @@
 <?php
 require_once "../logica/carritoLog.php";
 
+//si el usuario no tiene rol usuarioi no puede acceder a esta sección
+if ($_SESSION['rol'] !== 'usuario') {
+    // Si el usuario no es usuario, redirige a inicio
+    header("Location: plantilla.php?pagina=inicio"); 
+    exit();
+}
+
 if(isset($_POST["eliminarCarrito"])){
     eliminarProductoCarrito();
     header("Location: plantilla.php?pagina=carrito");

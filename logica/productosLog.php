@@ -19,13 +19,13 @@ function verProductos() {
             echo "        <p id='descrip'>{$producto['descripcion']}</p>";
             echo "        <p id='precio'>Precio: {$producto['precio_venta']} €</p>";
             echo "        <p id='precio'>Stock: {$producto['stock']} unidades</p>";
-
+            if (isset($_SESSION['rol']) && $_SESSION['rol'] === 'usuario')://si no es usuario no puede verlo
             echo "        <form action='plantilla.php?pagina=productos' method='POST'>";
             echo "            <input type='hidden' name='idProdCarrito' value='{$producto['id']}'>"; // ID del producto
             echo "            <input type='number' name='cantidad' placeholder='unidades a comprar' required>";
             echo "            <button type='submit' id='añadir' name='addProducto'>Añadir al carrito</button>"; // Botón de envío
             echo "        </form>";
-
+            endif;
             echo '    </div>';
             if (isset($_SESSION['rol']) && $_SESSION['rol'] === 'admin')://si no es administrador no puede verlo
             echo "    <div class='botonesAccion'>";
@@ -187,8 +187,8 @@ function agregarCarrito(){
 
             //almacenamos los datos necesarios de la fila
             $producto = $fila["nombre"];
-            $precio = $fila["precio_venta"];
-            $total = $cantidad * $precio;
+            $precio = (float) $fila["precio_venta"];
+            $total = round($cantidad * $precio, 2);
 
             //comprobamos que hay suficiente stock para comprar.
             if($fila["stock"] < $cantidad){
@@ -209,8 +209,9 @@ function agregarCarrito(){
             if($resultado -> num_rows > 0){
                 $fila = $resultado->fetch_assoc();
                 //actualizamos la cantidad
-                $stmt = $conexion->prepare("UPDATE carrito SET cantidad = cantidad +? WHERE idUsuario =? AND idProducto =?");
-                $stmt->bind_param("iii", $cantidad, $idUsu, $idProducto);
+                $stmt = $conexion->prepare("UPDATE carrito SET cantidad = cantidad + ?, total = total + ? WHERE idUsuario = ? AND idProducto = ?");
+                $nuevoTotal = round($cantidad * $precio, 2);
+                $stmt->bind_param("idii", $cantidad, $nuevoTotal, $idUsu, $idProducto);
                 $stmt->execute();
                 echo "Producto añadido al carrito correctamente.";
                 $stmt->close();
@@ -249,6 +250,7 @@ function agregarCarrito(){
     
     $conexion->close();
 }
+
 
 
 

@@ -57,7 +57,7 @@ if((!isset($_SESSION["usuario"]) || $_SESSION["usuario"] == "") && (!isset($_SES
                     </a>
                 </li>
 
-                <?php if (isset($_SESSION['rol']) && $_SESSION['rol'] === 'admin'): ?>
+                <?php if (isset($_SESSION['rol']) && $_SESSION['rol'] === 'admin'): ?><!--Si no es administrador no ve esta sección-->
                     <li>
                         <a href="plantilla.php?pagina=usuarios" class="<?php echo (isset($_GET['pagina']) && $_GET['pagina'] == 'usuarios') ? 'activo' : ''; ?>">
                             Usuarios
@@ -75,12 +75,14 @@ if((!isset($_SESSION["usuario"]) || $_SESSION["usuario"] == "") && (!isset($_SES
         </div>
         <div>
             <ul>
+            <?php if (isset($_SESSION['rol']) && $_SESSION['rol'] === 'usuario'): ?><!--Si no es usuario no ve esta sección-->
                 <li>
                     <a href="plantilla.php?pagina=carrito"
                         class="<?php echo (isset($_GET['pagina']) && $_GET['pagina'] == 'carrito') ? 'activo' : ''; ?>">
                         <i class="bi bi-cart-fill"></i>
                     </a>
                 </li>
+            <?php endif; ?>
             </ul>
         </div>
     </nav>

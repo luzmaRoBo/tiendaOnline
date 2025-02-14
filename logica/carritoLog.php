@@ -32,12 +32,13 @@ ini_set('display_errors', 1);
                 $fila = $resultado->fetch_assoc();
                 $idProducto = $fila['idProducto'];
                 $cantidad = $fila['cantidad'];
-                $precio = $fila['precioUnidad'];
+                $precio = round((float)$fila['precioUnidad'], 2);
+                $nuevoTotal = round($fila['total'] - $precio, 2);
                 //si la cantidad es mayor a 1
                 if ($cantidad > 1) {
                     // Si hay más de una unidad, se resta 1 actualizando el carrito
-                    $stmt = $conexion->prepare("UPDATE carrito SET cantidad = cantidad - 1, total = total - ? WHERE idCarrito = ? AND idUsuario = ?");
-                    $stmt->bind_param("iii",$precio, $idCarrito, $_SESSION['id']);
+                    $stmt = $conexion->prepare("UPDATE carrito SET cantidad = cantidad - 1, total = ? WHERE idCarrito = ? AND idUsuario = ?");
+                    $stmt->bind_param("dii",$nuevoTotal, $idCarrito, $_SESSION['id']);
                     $stmt->execute();
                     $stmt->close();
                 } else {

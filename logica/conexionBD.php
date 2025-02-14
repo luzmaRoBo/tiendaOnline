@@ -19,7 +19,7 @@ function conectarBD(){
     if($conexion ->connect_error){
         die("Conexion fallida: " . $conexion->connect_error);
     }else{
-        // echo "La conexión root con la BD se ha establecido<br>";
+        // echo "Conexión exitosa";
     }
 
     return $conexion;

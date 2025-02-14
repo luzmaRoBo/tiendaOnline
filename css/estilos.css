@@ -184,6 +184,26 @@ input,select{
     border-bottom: 2px solid #053543;
     font-weight: bolder;
 }
+#modalInicio{
+    display: block;
+    z-index: 100;
+    position: absolute;
+    top: 30%;
+    left: 35%;
+    width: 400px;
+    height: 400px;
+    background-color: #D6E1DD;
+    border: 2px solid #053543;
+    border-radius: 10px;
+}
+.datosInicio{
+    margin: 20px;
+    padding-left: 20px;
+    text-align: justify;
+    font-size: 1.2em;
+    color: #012030;
+
+}
 /*=====================================
         ESTILOS DEL MAIN
 ======================================*/
@@ -195,13 +215,16 @@ input,select{
     background-color: rgba(8, 106, 122, 0.2);
     padding: 20px;
 }
-
+.inicio{
+    width: 80%;
+    margin-right: auto;
+    margin-left: auto;
+}
 #inicio{
     margin: 30px;
     text-align: justify;
-    font-size: 1.1em;
+    font-size: 1.2em;
     color: #053543;
-    font-weight: bolder;
     padding-left: 30px;
     padding-right: 30px;
 }
@@ -535,6 +558,13 @@ td {
         font-size: 0.9em;
     }
 
+    #modalInicio{
+        top: 25%;
+        left: 30%;
+        width: 400px;
+        height: 400px;
+    }
+
 }
 
 @media (min-width: 481px) and (max-width: 768px){
@@ -631,6 +661,16 @@ td {
     .modal {
         width: 60%;
         height: 95%;
+    }
+    #modalInicio{
+        top: 25%;
+        left: 10%;
+        width: 400px;
+        height: 400px;
+    }
+    .modalUsu{
+        width: 55%;
+        height: 65%;
     }
 
 }
@@ -731,6 +771,18 @@ td {
     .modal {
         width: 60%;
         height: 95%;
+    }
+
+    #modalInicio{
+        top: 20%;
+        left: 10%;
+        width: 350px;
+        height: 350px;
+    }
+
+    .modalUsu{
+        width: 60%;
+        height: 65%;
     }
 
 

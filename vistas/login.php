@@ -51,6 +51,23 @@
             </p>
         </div>
     </main>
+
+    <div id="modalInicio">
+        <div class="cabeceraModal">
+            <div class="titulo"><h2>Datos para el inicio</h2></div>
+            <div class="cerrar"><button class="botonCerrar" type="button" onclick="cerrarL()">X</button></div>
+        </div>
+        <div class="datosInicio">
+            <p>
+                <strong>Rol Administrador:</strong> admin/admin<br><br>
+                <strong>Rol Usuario:</strong> usuario/usuario<br>
+                El registro se hace por defecto con rol usuario
+            </p>
+        </div>
+    </div>
+
+    <script src="../js/funciones.js"></script>
+</html>
 </body>
 </html>
 
